@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { Fact } from "../fact.model";
-import { FactsServiceService } from "../facts-service.service";
 
 @Component({
   selector: "app-details-list",
@@ -10,7 +9,7 @@ import { FactsServiceService } from "../facts-service.service";
 export class DetailsListComponent implements OnInit {
   @Input() details: Fact[];
   @Output() onClick: EventEmitter<any> = new EventEmitter();
-  constructor(public factService: FactsServiceService) {}
+  constructor() {}
 
   ngOnInit() {}
 
