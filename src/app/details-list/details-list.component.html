@@ -1,5 +1,4 @@
-<div class="detail-item" *ngFor="let detail of details;let index = index" (click)="method1CallForClick(index, 'details')">
-  <p>{{detail.text}}</p>
-  <p>{{detail.date | date:"dd/MM/yyyy HH:mm"}}</p>
-  <p>{{detail.rating}}</p>
+<div class="detail-item" *ngFor="let detailEl of details;let index = index"
+  (click)="factService.method1CallForClick(index, 'details')">
+  <app-details-item [detail]="detailEl"></app-details-item >
 </div>

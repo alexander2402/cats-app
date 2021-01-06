@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Fact } from '../fact.model';
+import { FactsServiceService } from '../facts-service.service';
 
 @Component({
   selector: 'app-details-list',
@@ -8,7 +9,7 @@ import { Fact } from '../fact.model';
 })
 export class DetailsListComponent implements OnInit {
   details: Fact[];
-  constructor() { }
+  constructor(public factService: FactsServiceService) { }
 
   ngOnInit() {
   }
