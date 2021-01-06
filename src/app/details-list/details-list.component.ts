@@ -8,7 +8,7 @@ import { FactsServiceService } from '../facts-service.service';
   styleUrls: ['./details-list.component.css']
 })
 export class DetailsListComponent implements OnInit {
-  details: Fact[];
+  details: Fact[] = this.factService.details;
   constructor(public factService: FactsServiceService) { }
 
   ngOnInit() {

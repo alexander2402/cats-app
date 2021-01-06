@@ -1,0 +1,12 @@
+
+
+.detail-item {
+  border: 1px solid black;
+  padding: 10px 10px;
+  margin: 10px 0;
+
+}
+
+.detail-item p {
+  margin: 5px 0;
+}

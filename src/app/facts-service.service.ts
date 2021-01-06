@@ -24,7 +24,7 @@ export class FactsServiceService {
         .then((res) => res.json())
         .then((res) => {
           this.facts = res.map((fact) => {
-            return new Fact((fact.id), fact.text, fact.user); //creating Array of Objects from data received from API
+            return new Fact((fact.id), fact.text, fact.createdAt); //creating Array of Objects from data received from API
           });
         });
     } catch (error) {
@@ -74,6 +74,7 @@ export class FactsServiceService {
 
   //Sending list of selected details to the PHP Server
   sendToServer() {
-     $.post("http://localhost:8889/json.php", {json : JSON.stringify(this.details)});
+     $.post("http://localhost:8889/cats-app/json.php", {json : JSON.stringify(this.details)});
+     location.href = 'http://localhost:4200';
   }
 }

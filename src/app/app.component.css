@@ -40,23 +40,6 @@ p {
 
 }
 
-.details {
-  border: 1px solid black;
-  padding: 15px 15px;
-  display: flex;
-    flex-direction: column;
-}
-
-.details .detail-item {
-  border: 1px solid black;
-  padding: 10px 10px;
-  margin: 10px 0;
-
-}
-
-.details .detail-item p {
-  margin: 5px 0;
-}
 
 .save-btn {
   width: 20%;
@@ -67,4 +50,11 @@ p {
   border: none;
   border-radius: 25px;
   height: 40px;
+}
+
+.details {
+  border: 1px solid black;
+  padding: 15px 15px;
+  display: flex;
+    flex-direction: column;
 }

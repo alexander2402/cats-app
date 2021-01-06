@@ -1,4 +1,4 @@
-import { Input } from '@angular/core';
+import { EventEmitter, Input, Output } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { Fact } from 'src/app/fact.model';
 
@@ -9,6 +9,7 @@ import { Fact } from 'src/app/fact.model';
 })
 export class DetailsItemComponent implements OnInit {
   @Input() detail: Fact;
+  @Output() detailClicked = new EventEmitter();
 
   constructor() { }
 

@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit } from '@angular/core';
 import { Fact } from 'src/app/fact.model';
 
 @Component({
@@ -9,6 +10,7 @@ import { Fact } from 'src/app/fact.model';
 export class ListItemComponent implements OnInit {
   @Input() fact: Fact;
   @Input() index: number;
+  @Output() factClicked = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
