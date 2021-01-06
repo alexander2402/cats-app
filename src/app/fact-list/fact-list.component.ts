@@ -1,25 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-import { Fact } from '../fact.model';
-import { FactsServiceService } from '../facts-service.service';
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
+import { Fact } from "../fact.model";
 
 @Component({
-  selector: 'app-fact-list',
-  templateUrl: './fact-list.component.html',
-  styleUrls: ['./fact-list.component.css']
+  selector: "app-fact-list",
+  templateUrl: "./fact-list.component.html",
+  styleUrls: ["./fact-list.component.css"],
 })
 export class FactListComponent implements OnInit {
+  @Input() facts: Fact[];
+  @Output() onClick: EventEmitter<any> = new EventEmitter();
+  constructor() {}
 
-  constructor(public factsService: FactsServiceService) { }
+  ngOnInit() {}
 
-  ngOnInit() {
-    this.factsService.onFetchFacts();
-    setTimeout(() => {
-      console.log(this.factsService.facts);
-    }, 1000);
-
+  itemClicked(itemId) {
+    this.onClick.emit(itemId);
   }
-
-
-
-
 }

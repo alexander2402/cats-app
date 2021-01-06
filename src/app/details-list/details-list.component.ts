@@ -1,17 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-import { Fact } from '../fact.model';
-import { FactsServiceService } from '../facts-service.service';
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
+import { Fact } from "../fact.model";
+import { FactsServiceService } from "../facts-service.service";
 
 @Component({
-  selector: 'app-details-list',
-  templateUrl: './details-list.component.html',
-  styleUrls: ['./details-list.component.css']
+  selector: "app-details-list",
+  templateUrl: "./details-list.component.html",
+  styleUrls: ["./details-list.component.css"],
 })
 export class DetailsListComponent implements OnInit {
-  details: Fact[];
-  constructor(public factService: FactsServiceService) { }
+  @Input() details: Fact[];
+  @Output() onClick: EventEmitter<any> = new EventEmitter();
+  constructor(public factService: FactsServiceService) {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  itemClicked(itemId) {
+    this.onClick.emit(itemId);
   }
-
 }

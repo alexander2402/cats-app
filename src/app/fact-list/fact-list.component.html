@@ -1,5 +1,8 @@
-<li *ngFor="let factEl of factsService.facts;let index = index">
-  <app-list-item (click)="factsService.method1CallForClick(index, 'facts')" [fact]="factEl" [index] = "index">
-
-  </app-list-item>
-</li>
+<ul class="facts-list" *ngIf="facts.length">
+  <li *ngFor="let fact of facts; let index = index">
+    <app-list-item
+      [fact]="fact"
+      (onItemClick)="itemClicked($event)"
+    ></app-list-item>
+  </li>
+</ul>

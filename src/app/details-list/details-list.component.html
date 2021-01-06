@@ -1,4 +1,8 @@
-<div class="detail-item" *ngFor="let detailEl of details;let index = index"
-  (click)="factService.method1CallForClick(index, 'details')">
-  <app-details-item [detail]="detailEl"></app-details-item >
-</div>
+<ul class="details-list" *ngIf="details.length">
+  <li *ngFor="let detail of details; let index = index">
+    <app-details-item
+      [detail]="detail"
+      (onItemClick)="itemClicked($event)"
+    ></app-details-item>
+  </li>
+</ul>
